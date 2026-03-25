@@ -1,6 +1,17 @@
 # API de Usuários com Autenticação JWT
 
-Este projeto é uma API REST desenvolvida com **Spring Boot**, com foco em cadastro e autenticação de usuários utilizando **JWT (JSON Web Token)**.
+API REST desenvolvida com **Spring Boot** para gerenciamento de usuários, com autenticação segura utilizando **JWT (JSON Web Token)**.
+
+---
+
+## Sobre o projeto
+
+Este projeto foi criado com o objetivo de praticar e demonstrar conhecimentos em:
+
+* Desenvolvimento de APIs REST
+* Autenticação e autorização
+* Segurança com Spring Security
+* Boas práticas de arquitetura em Java
 
 ---
 
@@ -17,18 +28,18 @@ Este projeto é uma API REST desenvolvida com **Spring Boot**, com foco em cadas
 
 ## Funcionalidades
 
-* ✅ Cadastro de usuário
+* ✅ Cadastro de usuários
 * ✅ Login com geração de token JWT
+* ✅ Criptografia de senha com BCrypt
 * ✅ Autenticação via token
-* ✅ CRUD de usuários
-* ✅ Senhas criptografadas com BCrypt
-* ✅ Proteção de rotas
+* ✅ Rotas protegidas
+* ✅ CRUD completo de usuários
 
 ---
 
 ## Autenticação
 
-A autenticação é feita via **JWT**.
+A autenticação é feita via token JWT.
 
 ### Login
 
@@ -55,9 +66,9 @@ POST /usuarios/login
 
 ---
 
-## Rotas protegidas
+## Acessando rotas protegidas
 
-Para acessar rotas protegidas, envie o token no header:
+Adicione o token no header da requisição:
 
 ```http
 Authorization: Bearer SEU_TOKEN
@@ -78,9 +89,9 @@ security/
 
 ---
 
-## Configuração do banco
+## Configuração do banco de dados
 
-Configure o arquivo:
+Arquivo:
 
 ```
 src/main/resources/application.properties
@@ -92,25 +103,28 @@ Exemplo:
 spring.datasource.url=jdbc:mysql://localhost:3306/projeto_api
 spring.datasource.username=root
 spring.datasource.password=senha
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ```
 
 ---
 
-## Como rodar o projeto
+## Como executar o projeto
 
-1. Clone o repositório:
+### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/api-usuarios-springboot.git
+git clone https://github.com/SANTOSAPS/api-usuarios-springboot.git
 ```
 
-2. Acesse a pasta:
+### 2. Acesse a pasta
 
 ```bash
 cd api-usuarios-springboot
 ```
 
-3. Execute:
+### 3. Execute o projeto
 
 ```bash
 mvn spring-boot:run
@@ -118,8 +132,11 @@ mvn spring-boot:run
 
 ---
 
-## Testes
+## Testando a API
 
-Você pode testar utilizando o **Postman** ou qualquer cliente HTTP.
+Você pode utilizar ferramentas como:
+
+* Postman
+* Insomnia
 
 ---
